@@ -1,0 +1,55 @@
+﻿<Window x:Class="Car_Rental.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Car_Rental"
+        mc:Ignorable="d"
+        Title="MainWindow" Height="450" Width="800"
+        Loaded="Window_Loaded">
+    <Grid>
+        <Grid.RowDefinitions>
+
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="*"/>
+
+        </Grid.RowDefinitions>
+
+        <Grid.ColumnDefinitions>
+
+            <ColumnDefinition Width="*"/>
+            <ColumnDefinition Width="*"/>
+
+        </Grid.ColumnDefinitions>
+
+        <StackPanel Grid.Row="0" Grid.Column="0" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="20">
+            <Label Margin="10" Content="Car Type"></Label>
+            <Label Margin="10" Content="Start Date"></Label>
+            <Label Margin="10" Content="End Date"></Label>
+        </StackPanel>
+
+        <StackPanel Grid.Row="0" Grid.Column="0" HorizontalAlignment="Center" VerticalAlignment="Top" Margin="20" >
+            <ComboBox  Margin="10"  Name="cbxCarType" SelectionChanged="cbxCarType_SelectionChanged"></ComboBox>
+            <DatePicker  Margin="10" Name="dpStartDate"></DatePicker>
+            <DatePicker  Margin="10" Name="dpEndDate"></DatePicker>
+            <Button  Margin="10" Content="Search" Name="btnSearch" Click="btnSearch_Click"></Button>
+        </StackPanel>
+
+        <StackPanel Grid.Row="0" Grid.Column="1" Orientation="Vertical" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="20" >
+            <Label Margin="10" Content="Shifty Nifty Car Rentals" HorizontalAlignment="Center" FontFamily="Algerian" FontSize="20"></Label>
+            <Image Name="image" Width="200" Height="120" RenderTransformOrigin="0.517,0.374"/>
+        </StackPanel>
+
+        <StackPanel Grid.Row="1" Grid.Column="0" Orientation="Vertical" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="20" >
+            <Label  Content="Available Cars" HorizontalAlignment="Left"></Label>
+            <ListBox  Height="125" Width="200" Name="lbAvailableCars" SelectionChanged="lbAvailableCars_SelectionChanged"></ListBox>
+        </StackPanel>
+
+        <StackPanel Grid.Row="1" Grid.Column="1" Orientation="Vertical" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="20">
+            <Label Content="Selected car" HorizontalContentAlignment="Left" FontWeight="Bold"></Label>
+            <TextBlock Name="tblSelectedCar" Width="200" Height="110" HorizontalAlignment="Left"></TextBlock>
+            <Button Content="Book" Width="50" HorizontalAlignment="Right" Margin="1" Name="btnBook" Click="btnBook_Click"></Button>
+        </StackPanel>
+
+    </Grid>
+</Window>
